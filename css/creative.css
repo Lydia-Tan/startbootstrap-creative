@@ -19,14 +19,14 @@ hr.light {
 }
 
 a {
-  color: #F05F40;
+  color: #45BF55;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 a:hover {
-  color: #f05f40;
+  color: #97ED8A;
 }
 
 h1,
@@ -166,6 +166,11 @@ img::-moz-selection {
   }
 }
 
+.portfolio-box{
+  width: 100px;
+  height: 100px;
+}
+
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
@@ -221,7 +226,8 @@ header.masthead p {
 .portfolio-box {
   position: relative;
   display: block;
-  max-width: 650px;
+  min-width: 700px;
+  min-height: 700px;
   margin: 0 auto;
 }
 

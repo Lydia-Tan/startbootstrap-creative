@@ -1,0 +1,732 @@
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.js"></script>
+  <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+
+
+<a-scene>
+
+  <a-entity environment = "preset: forest; dressing: trees " >
+    
+<a-entity camera look-controls position="0 1.5 0">
+     <a-cursor color = "white"></a-cursor>
+</a-entity>
+
+
+      
+ <a-camera id="camera" position="0 0 0" fly wasd-controls-enabled="true" look>
+            
+        </a-camera>
+<!--testing   -->
+<!--<a-assets>-->
+<!--    <a-asset-item id = "skull-model" src="https://dl.dropboxusercontent.com/s/dvahjq5trg9pysj/evil-skull.gltf" crossOrigin="anonymous">-->
+<!--    </a-asset-item>-->
+<!--    <a-gltf-model src="#skull-model" position = "0 0 0"></a-gltf-model>-->
+<!--</a-assets>-->
+
+ 
+  <!--<a-gltf-model src="models/scene.gltf" scale = "0.01 0.01 0.01" position = "0 0 0"></a-gltf-model>-->
+  
+  
+  
+  <!--working on deer   -->
+<!--i'm dumb af deer body = box-->
+<!--deer neck = box-->
+<!--deer ear = cones-->
+<!--deer legs = box (some rotated to form joints)-->
+<!--deer eyes and nose = box-->
+<!--deer tail = box-->
+
+<a-entity id = "oDeer">
+ 
+<!--hahahhahahahahahhahahah im hilarious so funny hahahhahahahahaahahhahahahaahhaha-->
+
+<!--back leg front-->
+<a-box color = #4F3602 position = "1 1.7 -4.333" width = "2" height = "1" depth = "1"></a-box>
+
+<!--neck-->
+<a-box color = #4F3602 rotation = "180 180 120" position = "0 2.503 -4.36" width = "1" height = "0.4" depth = "0.3"></a-box>
+
+<!--body-->
+<a-box color = #4F3602 position = "1.756 1.4 -4.4" width = "0.8" height = "0.8" depth = "1.4"></a-box>
+
+<!--front leg muscle-->
+<a-box color = #5A3F00 position = "0.369 1.4 -4.4" width = "0.66" height = "0.66" depth = "1.4"></a-box>
+
+<!--back leg muscle-->
+<a-box color = #5A3F00 rotation = "180 180 180" position = "2 0.8 -3.756" height = "2" width = " 0.2 " depth = "0.1"></a-box>
+
+<!--back leg back-->
+<a-box color = #5A3F00  rotation = "180 180 -140" position = "2.197 0.922 -4.838" height = "0.510" width = " 0.2 " depth = "0.1"></a-box>
+
+<!--hind leg back straight-->
+<a-box color = #5A3F00  rotation = "180 180 180" position = "2.364 0.220 -4.838" height = "1.4" width = " 0.2 " depth = "0.1"></a-box>
+
+<!--front leg back straight-->
+<a-box color = #5A3F00  rotation = "180 180 180" position = "0.3 0.220 -4.838" height = "1.7" width = " 0.2 " depth = "0.1"></a-box>
+
+<!--front leg back straight-->
+<a-box color = #5A3F00  rotation = "180 180 180" position = "0.3 0.220 -3.838" height = "1.7" width = " 0.2 " depth = "0.1"></a-box>
+
+<!--tail-->
+<a-box color = "white" rotation = "180 180 120" position = "2.2 2 -4.4" height = "0.3" width = " 0.3 " depth = "0.3"></a-box>
+
+<!--head-->
+<a-box color = #5A3F00  rotation = "180 180 120" position = "-0.35 2.8 -4.36" height = "0.7" width = " 0.4 " depth = "0.4"></a-box>
+
+<a-cone color = #5A3F00 position = "-0.2 3.13 -4.18" height = "0.2" rotation = "25 0 0" radius-bottom="0.09" radius-top = ".05"  ></a-cone>  <!--ear-->
+
+<a-cone color = #5A3F00 position = "-0.2 3.14 -4.53" height = "0.2" rotation = "-25 0 0" radius-bottom="0.09" radius-top = ".05"  ></a-cone>
+
+<a-box color = "white" rotation = "180 180 120" position = "-0.7 2.6 -4.35" height = "0.3" width = " 0.3 " depth = "0.3"></a-box>   <!-- white nose-->
+
+<a-cylinder color = "#c3bd86" radius = ".03" position = "-.32 3.2 -4.05" rotation = " 40 0 0"></a-cylinder> <!--antler-->
+<a-cylinder color = "#c3bd86" radius = ".03" position = "-.32 3.2 -3.85" rotation = " 80 0 0" height = ".5"></a-cylinder> 
+<a-cylinder color = "#c3bd86" radius = ".03" position = "-.15 3.354 -3.88" rotation = " 60 0 -60" height = ".4"></a-cylinder> 
+
+<a-cylinder color = "#c3bd86" radius = ".03" position = "-.32 3.345 -4.79" rotation = "-40 0 0"></a-cylinder> <!--antler-->
+<a-cylinder color = "#c3bd86" radius = ".03" position = "-.32 3.244 -4.91" rotation = "-80 0 0" height = ".5"></a-cylinder> 
+<a-cylinder color = "#c3bd86" radius = ".03" position = "-.46 3.517 -4.98" rotation = "-60 0 60" height = ".4"></a-cylinder> 
+
+<a-box color = "black" height = ".1" width = ".1" depth = ".1" position = "-.87 2.568 -4.35"></a-box>
+
+<a-box color = "black" height = ".08" width = ".08" depth = ".08" position = "-.43 2.957 -4.16"></a-box>
+
+
+</a-entity>
+
+
+        <a-entity id = "road" position = "6.97 0 0" visible="false">
+        <a-box color = "black" width = "5" depth = "1000" height = ".5" position = "6.451 0 0"></a-box>
+        <a-box color = "yellow" width = ".3" depth = "1000" height = ".55" position = "6.112 0 0"></a-box>
+        <a-box color = "yellow" width = ".3" depth = "1000" height = ".55" position = "6.795 0 0"></a-box>
+        </a-entity>
+
+
+
+<!--anthill-->
+<a-entity id = "antHill" visible="true" onclick="buildRoad()">
+<a-cone color = "#6f6134" height = ".5" radius-bottom = ".4" radius-top = ".1" position = "-1 0 -2"></a-cone>
+<a-box color = "black" height = ".03" depth = ".03" width = ".03" position = "-1 .233 -1.88"></a-box>
+<a-box color = "black" height = ".03" depth = ".03" width = ".03" position = "-1.01 .102 -1.8"></a-box>
+<a-box color = "black" height = ".03" depth = ".03" width = ".03" position = "-1.05 .015 -1.7"></a-box>
+</a-entity>
+
+<!--deer animation: STAGE ONE-->
+<script>
+
+
+
+document.getElementById("oDeer").onclick = thisStupidFunction;
+document.getElementById("petDeer").onclick = thisStupidFunction;
+
+function buildRoad() {
+  var antHill2 = document.getElementById("antHill");
+  antHill2.setAttribute("visible", "false");
+  
+  var road2 = document.getElementById("road");
+  road2.setAttribute("visible", "true");
+  
+  var roadText = document.getElementById("roadIn");
+  roadText.setAttribute("visible", "true")
+  
+  var deerDead2 = document.getElementById("deerDead");
+  deerDead2.setAttribute("visible", "false");
+  
+  var roadSignAppear = document.getElementById("roadSign");
+  roadSignAppear.setAttribute("visible", "true");
+}
+
+
+
+function thisStupidFunction() {
+  
+// send this shit flying YEET
+forest.object3D.position.set(3.5,1000, -3);
+
+oDeer.object3D.position.set(3.5,1000, -3);
+
+petDeer.object3D.position.set(3.5,1000, -3);
+
+// lookResult.object3D.position.set(1, 2.1, -2.5)
+
+look.object3D.position.set(3.5,1000, -3)
+
+deerDead.object3D.position.set(-1, 2, -2)
+
+badHuman.object3D.position.set(1, 2.1, 5)
+}
+</script>
+  
+<!--working on adding text-->
+
+<a-text id = "look" value="have a look around" position = "-2.4 2.1 -2.4" font = "mozillavr"></a-text>
+<!--<a-text id = "lookResult" value = "have a look around" position ="3.5 1000 -3" font = "mozillavr"></a-text>-->
+<a-text id = "deerDead" value = "4500 acres of forests are cleared\n every hour" font = "mozillavr" position = "0.5 1002 -3.5"></a-text>
+<a-text id = "petDeer" value = "pet the deer\n by clicking on it" position = "0.2 2 -3.7" font = "mozillavr"></a-text>
+<a-text id = "roadIn" value = "One and a half acres of forest are cut down every second" font = "mozillavr" position = "-1 2 -2" visible = "false"></a-text>
+<a-text id = "factoryText" value = "Tropical Rainforests store more than 210 gigatons of carbon and deforestation is the cause of 15% of carbon emissions" font = "mozillavr" position = "0 2 -2" visible = "false"></a-text>
+
+
+<!--<a-entity text="value:Hello; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/giveyouglory/GiveYouGlory.json;" position="0 2 -2.4"></a-entity>     -->
+
+<!--https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/giveyouglory/GiveYouGlory.json-->
+
+
+<!--have background forest hidden  -->
+<!--<a-box id="rightWall" height="100" depth="100" width="0.2" position=" 20 3.000 -17.247"  material="src: url(http://kb4images.com/images/sky-hd-wallpaper/35912504-sky-hd-wallpaper.jpg)"> </a-box>-->
+<!--<a-box id="leftWall" height="100" depth="100" width="0.2" position="-16 3 -1" color = "#89ffa7"> </a-box>-->
+<!--<a-box height="100" depth="100" width="0.2" position="10 3 26" rotation="0 90 0" color = "#89ffa7"> </a-box>-->
+<!--<a-box id="frontwall" height="100" depth="100" width="0.2" position="10 3 -25" rotation="0 90 0" color = "#89ffa7"> </a-box>-->
+<!--  </a-entity>-->
+ 
+<!--forest-->
+<a-entity id = "forest">
+<a-cylinder shadow="receive: true"  color = "#5e4330" radius = ".3" height = "4" position = " -10 0 -4"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#004C28" radius-bottom = "1.3" height = "6" position = "-10 4 -4"></a-cone>   <!--tree leaves-->
+ 
+<a-cylinder color = "#5e4330" radius = ".3" height = "4" position = " 0 0 8"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#004C28" radius-bottom = "1.3" height = "6" position = " 0 4 8"></a-cone>   <!--tree leaves-->
+
+<a-cylinder color = "#5e4330" radius = ".3" height = "4" position = " 6 0 -3.5"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#004C28" radius-bottom = "1.3" height = "6" position = "6 4 -3.5"></a-cone>   <!--tree leaves-->
+
+<a-cylinder color = "#5e4330" radius = ".3" height = "4" position = " -12 0 2"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#004C28" radius-bottom = "1.3" height = "6" position = " -12 4 2"></a-cone>   <!--tree leaves-->
+
+<a-cylinder color = "#5e4330" radius = ".3" height = "4" position = "-5 0 -2.4"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#004C28" radius-bottom = "1.3" height = "6" position = "-5 4 -2.4"></a-cone>   <!--tree leaves-->
+
+<a-cylinder color = "#5e4330" radius = ".3" height = "8" position = " -6 0 10"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#004C28" radius-bottom = "1.3" height = "6" position = " -6 7 10"></a-cone>   <!--tree leaves-->
+
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "4 0 -5"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "4 6 -5"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "4 5 -5"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "4 7 -5"></a-cone>   <!--tree leaves-->
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "6 0 4"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "6 6 4"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "6 5 4"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "6 7 4"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "-7 0 -6"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "-7 12 -6"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "-7 10 -6"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "-7 14 -6"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "4.06 0 7.9"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "4.06 12 7.9"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "4.06 10 7.9"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "4.0 14 7.9"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "6 0 -6"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "6 12 -6"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "6 10 -6"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "6 14 -6"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "-6 0 -4"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "-6 6 -4"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "-6 5 -4"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "-6 7 -4"></a-cone>   <!--tree leaves-->
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "4 0 3"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "4 6 3"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "4 5 3"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "4 7 3"></a-cone>   <!--tree leaves-->
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "-2 0 7"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "-2 6 7"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "-2 5 7"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "-2 7 7"></a-cone>   <!--tree leaves-->
+
+ <a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "-4.36 0 12.4"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "-4.36 6 12.4"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "-4.36 5 12.4"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "-4.36 7 12.4"></a-cone>   <!--tree leaves-->
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "2 0 -3"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "2 12 -3"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "2 10 -3"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "2 14 -3"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "-9.1 0 12.2"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "-9 12 12.2"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "-9 10 12.2"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "-9 14 12.2"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "8 0 6"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "8 12 6"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "8 10 6"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "2 14 -3"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "-10 0 -5"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "-10 12 -5"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "-10 10 -5"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "-10 14 -5"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "7 0 .5"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "7 6 .5"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "7 5 .5"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "7 7 .5"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "7 0 .5"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "7 6 .5"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "7 5 .5"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "7 7 .5"></a-cone>   <!--tree leaves-->
+
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "23 0 -1"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "23 6 -1"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "23 5 -1"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "23 7 -1"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "17 0 -1"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "17 6 -1"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "17 5 -1"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "17 7 -1"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "-17 0 -1"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "-17 6 -1"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "-17 5 -1"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "-17 7 -1"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "-17 0 15"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "-17 6 15"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "-17 5 15"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "-17 7 15"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "-9.1 0 12.2"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "-9.1 6 12.2"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "-9.1 5 12.2"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "-9.1 7 12.2"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "20 0 14"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "20 6 14"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "20 5 14"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "20 7 14"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "0 0 6"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "0 6 6"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "0 5 6"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "0 7 6"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "5" position = "0 0 -6"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "4" position = "0 6 -6"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "5" position = "0 5 -6"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "3.5" position = "0 7 -6"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "-1.5 0 -5"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "-1.5 12 -5"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "-1.5 10 -5"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "-1.5 14 -5"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".2" height = "10" position = "2 0 -8"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "1" height = "8" position = "2 12 -8"></a-cone>   <!--tree leaves-->    <!--tall tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.2" height = "10" position = "2 10 -8"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = ".8" height = "7" position = "2 14 -8"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".5" height = "5" position = "6 0 12"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "4" position = "6 6 12"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "5" position = "6 5 12"></a-cone>   <!--tree leaves-->    <!--wide stacked tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "3.5" position = "6 7 12"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".6" height = "10" position = "-12 0 7"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "8" position = "-12 12 7"></a-cone>   <!--tree leaves-->    <!--tall n wide tree-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "10" position = "-12 10 7"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "7" position = "-12 14 7"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".6" height = "10" position = "12 0 9"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "8" position = "12 12 9"></a-cone>   <!--tree leaves-->    <!--tall n wide tree-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "10" position = "12 10 9"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "7" position = "12 14 9"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".5" height = "5" position = "11.3 0 2.4"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "4" position = "11.3 6 2.4"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "5" position = "11.3 5 2.4"></a-cone>   <!--tree leaves-->    <!--wide stacked tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "3.5" position = "11.3 7 2.4"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".5" height = "5" position = "12.3 0 1.4"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "4" position = "12.3 6 1.4"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "5" position = "12.3 5 1.4"></a-cone>   <!--tree leaves-->    <!--wide stacked tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "3.5" position = "12.3 7 1.4"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".5" height = "5" position = "17 0 -4.6"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "4" position = "17 6 -4.6"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "5" position = "17 5 -4.6"></a-cone>   <!--tree leaves-->    <!--wide stacked tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "3.5" position = "17 7 -4.6"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".6" height = "10" position = "-1.1 0 11.8"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "8" position = "-1.1 12 11.8"></a-cone>   <!--tree leaves-->    <!--tall n wide tree-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "10" position = "-1.1 10 11.8"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "7" position = "-1.1 14 11.8"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".5" height = "5" position = "8.9 0 .1"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "4" position = "8.9 6 .1"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "5" position = "8.9 5 .1"></a-cone>   <!--tree leaves-->    <!--wide stacked tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "3.5" position = "8.9 7 .1"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".5" height = "5" position = "-4.4 0 -10.7"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "4" position = "-4.4S 6 -10.7"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "5" position = "-4.4 5 -10.7"></a-cone>   <!--tree leaves-->    <!--wide stacked tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "3.5" position = "-4.4 7 -10.7"></a-cone>   <!--tree leaves-->
+
+
+<a-cylinder color = "#5e4330" radius = ".5" height = "5" position = "-14.4 0 -4.7"></a-cylinder>  <!--tree trunk-->
+
+<a-cone color = "#167F39" radius-bottom = "2" height = "4" position = "-14.4 6 -4.7"></a-cone>   <!--tree leaves-->
+
+<a-cone color = "#167F39" radius-bottom = "2.4" height = "5" position = "-14.4 5 -4.7"></a-cone>   <!--tree leaves-->    <!--wide stacked tree-->
+
+<a-cone color = "#167F39" radius-bottom = "1.6" height = "3.5" position = "-14.4 7 -4.7"></a-cone>   <!--tree leaves-->
+
+<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "12" radius = ".2" position = "-2 0 0"></a-cylinder>
+<a-sphere color = "#97ED8A" position = "-2.2 6 0"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-2 6.2 -.1"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-2 6 0"></a-sphere>             <!--birch tree-->
+<a-sphere color = "#97ED8A" position = "-1.8 6.5 .3"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-1 5.8 -.2" radius = "1.2"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-2.5 6.1 .2" radius = "1.1"></a-sphere>
+<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "1.8" radius = ".05" position = "-1.5 4 0" rotation = "0 0 -45"></a-cylinder>
+
+<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "12" radius = ".2" position = "-4.1 0 7.9"></a-cylinder>
+<a-sphere color = "#97ED8A" position = "-4.1 7 7.9"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-4.1 7.1 7.6"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-4.2 6.9 8"></a-sphere>             <!--birch tree-->
+<a-sphere color = "#97ED8A" position = "-3.8 6.9 7.8"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-3.9 7 8.1" radius = "1.2"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-4.3 7 8" radius = "1.1"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-2.3 6.1 7.6"></a-sphere>
+<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "1.8" radius = ".05" position = "-3.3 5.2 7.9" rotation = "0 0 -45"></a-cylinder>
+
+<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "12" radius = ".2" position = "-6 0 4"></a-cylinder>
+<a-sphere color = "#97ED8A" position = "-6 5 4"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-5.5 5.2 4.5"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-6.2 5 5"></a-sphere>             <!--birch tree-->
+<a-sphere color = "#97ED8A" position = "-6.1 5.5 4.2"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-5.5 5.5 5.2" radius = "1"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-5.8 5.2 4.8" radius = "1"></a-sphere>
+<!--<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "1.8" radius = ".05" position = "11 7 -2" rotation = "0 0 -45"></a-cylinder>-->
+
+
+
+<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "16" radius = ".2" position = "5 0 0"></a-cylinder>
+<a-sphere color = "#97ED8A" position = "5.5 8.8 .13" radius = "1.5"></a-sphere>
+<a-sphere color = "#97ED8A" position = "5 7.9 .6"></a-sphere>
+<a-sphere color = "#97ED8A" position = "5 8.4 -1" radius = "1.4"></a-sphere>                    <!--birch tree-->
+<a-sphere color = "#97ED8A" position = "5 8.1 .3"></a-sphere>
+<a-sphere color = "#97ED8A" position = "5 7.8 -.4" radius = "1.2"></a-sphere>
+<a-sphere color = "#97ED8A" position = "5 8 1.2" radius = "1.3"></a-sphere>
+<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "2" radius = ".05" position = "5 6.7 .7" rotation = "45 0 0"></a-cylinder>
+<!--<a-cylinder src = "https://thumbs.dreamstime.com/b/vector-endless-seamless-pattern-dark-gray-ink-spots-hand-painted-white-background-simple-minimalist-style-vector-endless-102846819.jpg" height = "3" radius = ".05" position = "5 5.8 -.7" rotation = "-30 0 0"></a-cylinder>-->
+
+
+
+<a-entity id = "appleTree" position = "10 0 0" >
+  <!--<appleTree position = "1000 1000 1000"></appleTree>-->
+<a-cylinder color = "#5e4330" position = "0 0 -9" height = "6" radius = ".9"></a-cylinder>
+<a-cone color = "#5e4330" position = "0 0 -9" radius-bottom = "3" height = "2"></a-cone>
+<a-sphere color = "#97ED8A" position = "2 5 -9" radius = "2"></a-sphere>
+<a-sphere color = "#97ED8A" position = "0 5 -9" radius = "2"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-2 3.5 -9" radius = "1.6"></a-sphere>                    <!--apple tree-->
+<a-sphere color = "#97ED8A" position = "1.2 6.7 -9" radius = "1.3"></a-sphere>
+<a-sphere color = "#97ED8A" position = "0 2.8 -9" radius = "1.6"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-1.3 6 -9" radius = "1.8"></a-sphere>
+<a-sphere color = "#97ED8A" position = "1.4 6.6 -9.2" radius = "1.3"></a-sphere>
+<a-sphere color = "#97ED8A" position = "1.2 3.6 -8.9" radius = "1.7"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-1 6 -9.1" radius = "1.8"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-2 6 -9" radius = "2"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-.2 5 -9.1" radius = "2"></a-sphere>
+<a-sphere color = "#97ED8A" position = "0 7.6 -9.2" radius = "1.3"></a-sphere>
+<a-sphere color = "#97ED8A" position = "1 5.6 -8.9" radius = "1.7"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-1.2 6.2 -9.1" radius = "1.8"></a-sphere>
+<a-sphere color = "#97ED8A" position = "-2 6.7 -9" radius = "1.2"></a-sphere>
+
+<a-sphere color = "red" position = "1 5.6 -7" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "-1.2 4.2 -7.5" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "-2 4.7 -7.7" radius = ".15"></a-sphere>    <!--apples-->
+<a-sphere color = "red" position = "1.5 5.6 -7.5" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "1.2 6.2 -7.2" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "2 3.4 -7.5" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "0 5.6 -7" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "-1.2 5.2 -7.5" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "-2 3.7 -7.5" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = ".3 5.3 -7" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "-.2 4.8 -7" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = ".2 3.3 -7.5" radius = ".15"></a-sphere>
+<a-sphere color = "red" position = "-2 5.3 -7" radius = ".15"></a-sphere>
+</a-entity>
+</a-entity>
+<!--<a-entity light="type: point; intensity: 0.6;"></a-entity>-->
+<!--  <a-entity light="type: spotlight;-->
+<!--                   castShadow: true;-->
+<!--                   intensity: 1;-->
+<!--                   shadowCameraVisible: true;      -->
+<!--                   penumbra: 2;-->
+<!--                   color="yellow" </a-entity>-->
+<!--                   position="-6 0 -8"></a-entity>-->
+<!--                   </a-entity>-->
+
+
+<!--//BOKEH STARTS HERE-->
+
+ <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="10 -15 -20" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="-16 10 0"></a-animation>
+      </a-entity>
+      
+      <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="9 -15 -10" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="-16 10 0"></a-animation>
+      </a-entity>
+      
+      <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="-9 -15 10" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="16 10 -1"></a-animation>
+      </a-entity>
+      
+      <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="-6 -15 10" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="16 10 -1"></a-animation>
+      </a-entity>
+      
+      <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="0 0 0" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="0 8 0"></a-animation>
+      </a-entity>
+      
+      <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="1 0 1" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="4 8 0"></a-animation>
+      </a-entity>
+      
+       <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="15 0 6" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="4 16 -3"></a-animation>
+      </a-entity>
+      
+      <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="15 0 -7" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="4 16 -20"></a-animation>
+      </a-entity>
+      <a-entity geometry="primitive: sphere" material="shader: flat;color:yellow;opacity:.1" position="-15 0 -20" radius = ".5">
+        <a-animation easing="linear" attribute="position" repeat="indefinite" dur="21000" to="4 16 20"></a-animation>
+      </a-entity>
+      
+</a-entity>
+
+
+<!--fun factory wooo death-->
+      <a-entity id = "factory" position = "0 0 0 " visible="false">
+     <!--<a-box color = "#585858" height = "15" width = "20" depth = "25"></a-box>-->
+     <!--   <a-box color = "#585858"  height = "3" width = "20" depth = "3"></a-box>-->
+ 
+          <a-box color = "#585858" position = "-8.9 0 -22" height = "15" width = "20" depth = "25" ></a-box>
+        <a-box color = "#585858" position = "-15.4 9 -19.4" height = "3" width = "3" depth = "20"></a-box>
+        <a-box color = "#585858" position = "-10.2 9 -19.4" height = "3" width = "3" depth = "20"></a-box>
+        <a-cylinder color = "#585858" position = "-3.61 9 -14.3" height = "12" radius = "3.5"></a-cylinder>
+        <a-cylinder color = "#585858" position = "-1 20 -29.1" height = "12" radius = "3.5"></a-cylinder>
+        <a-sphere color = "#616161" opacity = "1" position = "-3.61 18 -14.3" radius = "3.5"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-3.5 20.5 -14.3" radius = "3.5"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-3.3 22.5 -14.8" radius = "3"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-2.1 24.2 -15" radius = "3.2"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-1.7 26 -14" radius = "3"></a-sphere>
+        <a-sphere color = "#616161" position = "-1.2 26.5 -15" radius = "2.8"></a-sphere>
+        <a-sphere color = "#616161" position = "-.6 28.7 -15.9" radius = "2.5"></a-sphere>
+        <a-sphere color = "#616161" position = ".2 29.8 -14" radius = "2"></a-sphere>
+        <a-sphere color = "#616161" position = ".5 30.8 -16" radius = "1.25"></a-sphere>
+        <a-sphere color = "#616161" position = "1.6 31.2 -15.2" radius = "1.2"></a-sphere>
+        <a-sphere color = "#616161" position = "2.3 34.8 -14.6" radius = "1"></a-sphere>
+        
+        
+        <!--<a-cylinder color = "#585858" position = "-3.61 9 -29.1" height = "12" radius = "3.5"></a-cylinder>-->
+        <a-sphere color = "#616161" position = "-1 25 -29.1" radius = "3.6"></a-sphere>
+        <a-sphere color = "#616161" position = "-1.6 28 -28.6" radius = "3.4"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-1 28.7 -27.8" radius = "3.5"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-0.8 29.7 -28.3" radius = "3"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-1.2 31 -28.6" radius = "2.5"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-0.6 32.7 -27.3" radius = "2.5"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-.4 33.5 -28.9" radius = "2"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "0 34 -27" radius = "2"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-.2 36 -93" radius = "1.5"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-.75 38 -95.3" radius = "1.25"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = ".74 40 -95.3" radius = "1"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "1.4 42 -98.3" radius = ".5"></a-sphere>
+        <a-sphere color = "#616161" opacity = "1" position = "-1.8 36 -95.3" radius = ".5"></a-sphere>
+        </a-entity>
+ 
+
+        
+<a-entity id = "roadSign" position = "0 0 0" onclick="factoryVisible()" visible = "false">
+    
+   
+  <!--3.5 1000 3-->
+  <!--sign post-->
+<a-box color = #878C88 position = "-2 0.220 -3.838" height = "6" width = " 0.1 " depth = "0.1" metalness = "0.6"></a-box>
+  <a-triangle position = "-2 3 -3.7" rotation = "180 180 0" color =#FF3B1D></a-triangle>
+  <a-box color = "white" position = "-1.8 2.8 -3" height = "0.7" width = " 0.03" depth = "0.04" rotation = "0 180 155"></a-box>
+  <a-box color = "white" position = "-1.59 3.1 -3" height = "0.64" width = " 0.03" depth = "0.04" rotation = "0 180 90"></a-box>
+  <a-box color = "white" position = "-1.45 2.8 -3" height = "0.64" width = " 0.03" depth = "0.04" rotation = "0 180 30"></a-box>
+  
+
+</a-entity>
+  
+<script>
+// <!--document.getElementById("oDeer").onclick = thisStupidFunction-->
+// <!--function coolName() {-->
+  
+// <!--// send this shit flying YEET-->
+// <!--forest.object3D.position.set(3.5,1000, -3);-->
+
+// <!--oDeer.object3D.position.set(3.5,1000, -3);-->
+
+// <!--petDeer.object3D.position.set(3.5,1000, -3);-->
+
+// <!--lookResult.object3D.position.set(1, 2.1, -2.5)-->
+
+// <!--look.object3D.position.set(3.5,1000, -3)-->
+
+// <!--badHuman.object3D.position.set(1, 2.1, 5)-->
+// <!--}-->
+
+  function factoryVisible(){
+    var factoryInvisible = document.getElementById("factory");
+    factoryInvisible.setAttribute("visible", "true");
+    
+  }
+  </script>
+  
+  
+  
+  <a-entity light="type: point; color: #FFF; intensity:1.1" position="0.729 -0.11 1.646"></a-entity>
+</a-scene>
+
+<!--oDeer.object3D.position.set(3.5,1000, -3);-->
